@@ -14,8 +14,34 @@
         <link href="{{url('css/app.css')}}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="title">
-            <h1>{{ config('app.name') }}</h1>
-        </div>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="jumbotron">
+                                            <h1 class="display-4">{{ config('app.name') }}</h1>
+                                        </div>
+
+                                        <div>
+                                            <h1 class="display-6">Podcasts</h1>
+                                            <hr />
+                                        </div>
+
+                                        <div>
+                                            <h1 class="display-6">Resources</h1>
+                                            <hr />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
