@@ -10005,3 +10005,13 @@ body {
   background-color: #f5f5f5;
 }
 
+.resource {
+  margin: 2px;
+}
+
+@media (max-width: 900px) {
+  .resource {
+    width: 100%;
+  }
+}
+
