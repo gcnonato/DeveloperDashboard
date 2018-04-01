@@ -32,14 +32,14 @@
                                                 <div class="col-xs-12 col-md-6 col-lg-6 mb-4">
                                                     <h4>Resources</h4>
                                                     @foreach($resources as $resource)
-                                                        <a class="btn btn-dark btn-lg resource" href="{{ $resource['link'] }}" role="button"><i class="{{ $resource['icon'] }}"></i> {{ $resource['title'] }}</a>
+                                                        <a class="btn btn-dark btn-lg resource" href="{{ $resource['link'] }}" target="_blank" role="button"><i class="{{ $resource['icon'] }}"></i> {{ $resource['title'] }}</a>
                                                     @endforeach
                                                 </div>
 
                                                 <div class="col-xs-12 col-md-6 col-lg-6">
                                                     <h4>Docs</h4>
                                                     @foreach($docs as $doc)
-                                                        <a class="btn btn-dark btn-lg resource" href="{{ $doc['link'] }}" role="button"><i class="{{ $doc['icon'] }}"></i> {{ $doc['title'] }}</a>
+                                                        <a class="btn btn-dark btn-lg resource" href="{{ $doc['link'] }}" target="_blank" role="button"><i class="{{ $doc['icon'] }}"></i> {{ $doc['title'] }}</a>
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -55,12 +55,12 @@
 
                                             @foreach($podcastFeeds as $feed)
                                                 <div class="feed">
-                                                    <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}">{{ $feed->get_title() }}</a></h2>
+                                                    <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}" target="_blank">{{ $feed->get_title() }}</a></h2>
                                                 </div>
                                                     <div class="row">
                                                         @foreach(array_slice($feed->get_items(), 0, 2) as $item)
                                                             <div class="col-xs-12 col-md-6 col-lg-6">
-                                                                <h4><a href="{{ $item->get_permalink() }}">{{ $item->get_title() }}</a></h4>
+                                                                <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
                                                                 <p>{{ substr($item->get_description(), 0, 200) }}...</p>
                                                                 <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
                                                             </div>
