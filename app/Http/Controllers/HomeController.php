@@ -16,6 +16,7 @@ class HomeController extends Controller
     {
         // RSS feed URL's for podcasts.
         $podcasts = [
+            'https://responsivewebdesign.com/podcast/feed.xml',
             'https://softwareengineeringdaily.com/feed/podcast/',
             'http://www.pwop.com/feed.aspx?show=dotnetrocks&filetype=master',
         ];
@@ -39,10 +40,24 @@ class HomeController extends Controller
             ],
         ];
 
+        // Library Docs, including their name, link and fontawesome icon.
+        $docs = [
+            [
+                'title' => 'Laravel',
+                'link' => 'https://laravel.com/docs/5.6',
+                'icon' => 'fab fa-laravel',
+            ],
+            [
+                'title' => 'React',
+                'link' => 'https://reactjs.org/docs/',
+                'icon' => 'fab fa-react'
+            ],
+        ];
+
         foreach ($podcasts as $key => $podcast) {
             $podcastFeeds[$key] = Feeds::make($podcast);
         }
 
-        return view('welcome', compact('podcastFeeds', 'resources'));
+        return view('welcome', compact('resources', 'docs', 'podcastFeeds'));
     }
 }

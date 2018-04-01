@@ -1,6 +1,12 @@
-# LearningTools
+# Developer Dashboard
 
 A Laravel Single page app to show frequently used learning resources.
+
+## Motivations
+
+As a developer you spend many hours learning, so having an area to immediately see what content has been updated, and being able to navigate to this content could be a massive time saver. I originally wanted an area to see podcast updates, and began thinking about other useful features.
+
+The main aims of this developer dashboard is to allow a person to say what they want to study, what applications they use to study, and for these to be easily accessible.
 
 ## Setup
 
@@ -12,7 +18,7 @@ A Laravel Single page app to show frequently used learning resources.
 
 ## Usage
 
-The [Home Controller](https://github.com/mw999/LearningTools/blob/master/app/Http/Controllers/HomeController.php) contains declarations of the resources displayed on page. Markup doesn't need to be touched.
+The [Home Controller](https://github.com/mw999/DeveloperDashboard/blob/master/app/Http/Controllers/HomeController.php) contains declarations of the resources displayed on page. Markup doesn't need to be touched.
 
 - Learning Resources - frequently used learning applications.
 - Podcasts - rss feeds for software engineering podcasts.
