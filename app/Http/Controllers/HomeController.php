@@ -14,45 +14,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // RSS feed URL's for podcasts.
-        $podcasts = [
-            'https://responsivewebdesign.com/podcast/feed.xml',
-            'https://softwareengineeringdaily.com/feed/podcast/',
-            'http://www.pwop.com/feed.aspx?show=dotnetrocks&filetype=master',
-        ];
-
-        // Learning resources, including their name, link and fontawesome icon.
-        $resources = [
-            [
-                'title' => 'GitHub',
-                'link' => 'https://github.com',
-                'icon' => 'fab fa-github'
-            ],
-            [
-                'title' => 'Laracasts',
-                'link' => 'https://laracasts.com/',
-                'icon' => 'fab fa-laravel',
-            ],
-            [
-                'title' => 'Scrimba',
-                'link' => 'https://scrimba.com',
-                'icon' => 'fab fa-css3-alt',
-            ],
-        ];
+        // Learning resources, including their name, link and font awesome icon.
+        $resources = config('dashboard.resources');
 
         // Library Docs, including their name, link and fontawesome icon.
-        $docs = [
-            [
-                'title' => 'Laravel',
-                'link' => 'https://laravel.com/docs/5.6',
-                'icon' => 'fab fa-laravel',
-            ],
-            [
-                'title' => 'React',
-                'link' => 'https://reactjs.org/docs/',
-                'icon' => 'fab fa-react'
-            ],
-        ];
+        $docs = config('dashboard.docs');
+
+        // RSS feed URL's for podcasts.
+        $podcasts = config('dashboard.podcasts');
 
         foreach ($podcasts as $key => $podcast) {
             $podcastFeeds[$key] = Feeds::make($podcast);

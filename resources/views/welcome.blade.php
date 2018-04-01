@@ -58,7 +58,7 @@
                                                     <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}" target="_blank">{{ $feed->get_title() }}</a></h2>
                                                 </div>
                                                     <div class="row">
-                                                        @foreach(array_slice($feed->get_items(), 0, 2) as $item)
+                                                        @foreach(array_slice($feed->get_items(), 0, config('dashboard.item_count')) as $item)
                                                             <div class="col-xs-12 col-md-6 col-lg-6">
                                                                 <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
                                                                 <p>{{ substr($item->get_description(), 0, 200) }}...</p>

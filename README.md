@@ -20,8 +20,9 @@ An example of my setup can be found [here](https://dashboard.mattywilliams.co.uk
 
 ## Usage
 
-The [Home Controller](https://github.com/mw999/DeveloperDashboard/blob/master/app/Http/Controllers/HomeController.php) contains declarations of the resources displayed on page. Markup doesn't need to be touched.
+The [Dashboard Config](https://github.com/mw999/DeveloperDashboard/blob/master/config/dashboard.php) contains declarations of the resources displayed on the dashboard. The markup of the page doesn't need to be touched.
 
-- Learning Resources - frequently used learning applications.
+- Learning Resources - Frequently used learning applications.
 - Docs - Documentation for frequently used libraries.
 - Podcasts - RSS feeds for software engineering podcasts.
+- Item Count - How many items are shown per podcast.
