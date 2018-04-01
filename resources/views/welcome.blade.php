@@ -42,15 +42,18 @@
                                             <hr />
 
                                             @foreach($podcastFeeds as $feed)
-                                                <h2 class="mb-3">{{ $feed->get_title() }}</h2>
-
-                                                @foreach(array_slice($feed->get_items(), 0, 2) as $item)
-                                                    <div class="item">
-                                                        <h4><a href="{{ $item->get_permalink() }}">{{ $item->get_title() }}</a></h4>
-                                                        <p>{{ $item->get_description() }}</p>
-                                                        <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
+                                                <div class="feed">
+                                                    <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}">{{ $feed->get_title() }}</a></h2>
+                                                </div>
+                                                    <div class="row">
+                                                        @foreach(array_slice($feed->get_items(), 0, 2) as $item)
+                                                            <div class="col-xs-12 col-md-6 col-lg-6">
+                                                                <h4><a href="{{ $item->get_permalink() }}">{{ $item->get_title() }}</a></h4>
+                                                                <p>{{ substr($item->get_description(), 0, 200) }}...</p>
+                                                                <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
-                                                @endforeach
                                                 <hr />
                                             @endforeach
                                         </div>

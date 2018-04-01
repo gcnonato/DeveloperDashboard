@@ -12,8 +12,7 @@ A Laravel Single page app to show frequently used learning resources.
 
 ## Usage
 
-The [Home Controller](https://github.com/mw999/LearningTools/blob/master/app/Http/Controllers/Home
-Controller.php) contains declarations of the resources displayed on page. Markup doesn't need to be touched.
+The [Home Controller](https://github.com/mw999/LearningTools/blob/master/app/Http/Controllers/HomeController.php) contains declarations of the resources displayed on page. Markup doesn't need to be touched.
 
 - Learning Resources - frequently used learning applications.
 - Podcasts - rss feeds for software engineering podcasts.

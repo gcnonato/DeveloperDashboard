@@ -24,3 +24,25 @@ body {
     width: 100%;
   }
 }
+
+.feed {
+	/* unvisited link */
+	a:link {
+	    color: #212529;
+	}
+
+	/* visited link */
+	a:visited {
+	    color: #212529;
+	}
+
+	/* mouse over link */
+	a:hover {
+	    color: #212529;
+	}
+
+	/* selected link */
+	a:active {
+	    color: #212529;
+	}
+}

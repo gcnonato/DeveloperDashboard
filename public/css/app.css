@@ -10015,3 +10015,26 @@ body {
   }
 }
 
+.feed {
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */
+}
+
+.feed a:link {
+  color: #212529;
+}
+
+.feed a:visited {
+  color: #212529;
+}
+
+.feed a:hover {
+  color: #212529;
+}
+
+.feed a:active {
+  color: #212529;
+}
+
