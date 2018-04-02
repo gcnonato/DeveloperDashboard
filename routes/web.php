@@ -11,4 +11,8 @@
 |
 */
 
+// Landing Page
 Route::get('/', 'HomeController@index')->name('home');
+
+// Random Learning Resource
+Route::get('/random', 'HomeController@random')->name('random');

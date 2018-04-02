@@ -20,8 +20,23 @@
                                 <div class="card mb-4">
                                     <div class="card-body">
                                         <div class="jumbotron">
-                                            <h1 class="display-4">{{ config('app.name') }}</h1>
-                                            <p class="lead">A place to navigate frequently used learning resources.</p>
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-8 col-lg-8">
+                                                    <h1 class="display-4">{{ config('app.name') }}</h1>
+                                                    <p class="lead">A place to navigate frequently used learning resources.</p>
+                                                </div>
+
+                                                <div class="col-xs-12 col-md-4 col-lg-4">
+                                                    <a href="{{ route('random') }}" target="_blank" class="btn btn-dark btn-lg random-btn">
+                                                        <div class="mb-2">
+                                                            Learn Something Random
+                                                        </div>
+                                                        <div>
+                                                            <i class="fas fa-question fa-3x"></i>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
 
                                             <hr class="my-4">
 
