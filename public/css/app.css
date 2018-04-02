@@ -10005,14 +10005,8 @@ body {
   background-color: #f5f5f5;
 }
 
-.resource {
-  margin: 2px;
-}
-
-@media (max-width: 1100px) {
-  .resource {
-    width: 100%;
-  }
+.jumbotron {
+  margin-bottom: 0px;
 }
 
 .feed {
@@ -10036,5 +10030,15 @@ body {
 
 .feed a:active {
   color: #212529;
+}
+
+.resource {
+  margin: 2px;
+}
+
+@media (max-width: 1100px) {
+  .resource {
+    width: 100%;
+  }
 }
 

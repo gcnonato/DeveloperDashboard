@@ -77,5 +77,6 @@ return [
     | feed.
     |
     */
+
     'item_count' => 2,
 ];

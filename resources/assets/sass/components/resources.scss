@@ -1,0 +1,9 @@
+.resource {
+	margin: 2px;
+}
+
+@media (max-width: 1100px) {
+  .resource {
+    width: 100%;
+  }
+}
