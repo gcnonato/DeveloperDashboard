@@ -79,4 +79,31 @@ return [
     */
 
     'item_count' => 2,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Youtube Channels
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify Youtube channels to subscribe to. The channel ID
+    | or channel name can be used. For example in
+    | youtube.com/channel/UCKuHFYu3smtrl2AwwMOXOlg/videos
+    | UCKuHFYu3smtrl2AwwMOXOlg will be used.
+    |
+    */
+
+    'channels' => [
+        'DevTipsForDesigners',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Youtube Video Count
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify how many videos are returned per channel.
+    |
+    */
+
+    'video_count' => 1,
 ];

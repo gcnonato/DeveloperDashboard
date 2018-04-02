@@ -71,6 +71,32 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div>
+                                            <h1 class="display-4">Videos</h1>
+                                            <hr />
+                                        </div>
+
+                                        @foreach ($channelList as $channelVideos)
+                                            <div class="feed">
+                                                <h2 class="mb-3"><a href="https://www.youtube.com/channel/{{ $channelVideos[0]->snippet->channelId  }}/videos" target="_blank">{{ $channelVideos[0]->snippet->channelTitle }}</a></h2>
+                                            </div>
+
+                                            @foreach ($channelVideos as $video)
+                                                <div class="video-holder">
+                                                    <iframe class="youtube"
+                                                    src="//www.youtube.com/embed/{{ $video->id->videoId }}"
+                                                    frameborder="0"
+                                                    allow="autoplay; encrypted-media"
+                                                    allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                            @endforeach
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
