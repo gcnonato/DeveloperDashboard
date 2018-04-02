@@ -7,9 +7,6 @@
 
         <title>{{ config('app.name') }}</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
         <!-- Styles -->
         <link href="{{url('css/app.css')}}" rel="stylesheet" type="text/css">
     </head>
@@ -54,17 +51,19 @@
                                             <hr />
 
                                             @foreach($podcastFeeds as $feed)
-                                                <div class="feed">
-                                                    <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}" target="_blank">{{ $feed->get_title() }}</a></h2>
-                                                </div>
-                                                    <div class="row">
-                                                        @foreach(array_slice($feed->get_items(), 0, config('dashboard.item_count')) as $item)
-                                                            <div class="col-xs-12 col-md-6 col-lg-6">
-                                                                <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
-                                                                <p>{{ substr($item->get_description(), 0, 200) }}...</p>
-                                                                <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
-                                                            </div>
-                                                        @endforeach
+                                                <div class="podcast">
+                                                    <div class="feed">
+                                                        <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}" target="_blank">{{ $feed->get_title() }}</a></h2>
+                                                    </div>
+                                                        <div class="row">
+                                                            @foreach(array_slice($feed->get_items(), 0, config('dashboard.item_count')) as $item)
+                                                                <div class="col-xs-12 col-md-6 col-lg-6">
+                                                                    <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
+                                                                    <p>{{ substr($item->get_description(), 0, 200) }}...</p>
+                                                                    <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
                                                     </div>
                                                 <hr />
                                             @endforeach
@@ -80,21 +79,24 @@
                                         </div>
 
                                         @foreach ($channelList as $channelVideos)
-                                            <div class="feed">
-                                                <h2 class="mb-3"><a href="https://www.youtube.com/channel/{{ $channelVideos[0]->snippet->channelId  }}/videos" target="_blank">{{ $channelVideos[0]->snippet->channelTitle }}</a></h2>
-                                            </div>
-
-                                            @foreach ($channelVideos as $video)
-                                                <div class="video-holder">
-                                                    <iframe class="youtube"
-                                                    src="//www.youtube.com/embed/{{ $video->id->videoId }}"
-                                                    frameborder="0"
-                                                    allow="autoplay; encrypted-media"
-                                                    allowfullscreen>
-                                                    </iframe>
+                                            <div class="video">
+                                                <div class="feed">
+                                                    <h2 class="mb-3"><a href="https://www.youtube.com/channel/{{ $channelVideos[0]->snippet->channelId  }}/videos" target="_blank">{{ $channelVideos[0]->snippet->channelTitle }}</a></h2>
                                                 </div>
-                                            @endforeach
+
+                                                @foreach ($channelVideos as $video)
+                                                    <div class="video-holder">
+                                                        <iframe class="youtube"
+                                                        src="//www.youtube.com/embed/{{ $video->id->videoId }}"
+                                                        frameborder="0"
+                                                        allow="autoplay; encrypted-media"
+                                                        allowfullscreen>
+                                                        </iframe>
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         @endforeach
+                                        <hr />
                                     </div>
                                 </div>
                             </div>

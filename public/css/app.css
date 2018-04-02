@@ -9999,6 +9999,7 @@ html {
 }
 
 body {
+  font-family: 'Raleway', serif;
   height: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -10007,6 +10008,11 @@ body {
 
 .jumbotron {
   margin-bottom: 0px;
+}
+
+.podcast {
+  background-color: ghostwhite;
+  padding: 10px;
 }
 
 .feed {
@@ -10040,6 +10046,11 @@ body {
   .resource {
     width: 100%;
   }
+}
+
+.video {
+  background-color: ghostwhite;
+  padding: 10px;
 }
 
 .video-holder {

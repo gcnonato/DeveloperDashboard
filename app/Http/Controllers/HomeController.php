@@ -41,7 +41,6 @@ class HomeController extends Controller
             }
 
             $channelId = $foundChannel->id;
-
             $channelList[$key] = Youtube::listChannelVideos($channelId, $videoCount);
         }
 
