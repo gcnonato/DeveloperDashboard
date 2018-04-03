@@ -8,7 +8,7 @@
         <title>{{ config('app.name') }}</title>
 
         <!-- Styles -->
-        <link href="{{url('css/app.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ url('css/app.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
         <main role="main" class="container">
@@ -27,14 +27,14 @@
                                                 </div>
 
                                                 <div class="col-xs-12 col-md-4 col-lg-4">
-                                                    <a href="{{ route('random') }}" target="_blank" class="btn btn-dark btn-lg random-btn">
+                                                    <button onClick="buttonLoad('{{ route('random') }}');" class="btn btn-dark btn-lg random-btn" id="load">
                                                         <div class="mb-2">
                                                             Learn Something Random
                                                         </div>
                                                         <div>
                                                             <i class="fas fa-question fa-3x"></i>
                                                         </div>
-                                                    </a>
+                                                    </button>
                                                 </div>
                                             </div>
 
@@ -132,4 +132,5 @@
 
     <!-- Scripts -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <script src="{{ url('js/app.js') }}"></script>
 </html>

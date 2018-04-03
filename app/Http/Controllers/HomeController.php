@@ -104,7 +104,7 @@ class HomeController extends Controller
         // Youtube video links
         foreach ($channelList as $channelVideos) {
             foreach ($channelVideos as $video) {
-                array_push($links, 'www.youtube.com/embed/' . $video->id->videoId);
+                array_push($links, '//www.youtube.com/embed/' . $video->id->videoId);
             }
         }
 

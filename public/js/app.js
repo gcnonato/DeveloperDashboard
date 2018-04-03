@@ -12994,6 +12994,7 @@ module.exports = __webpack_require__(9);
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(5);
+__webpack_require__(14);
 
 /***/ }),
 /* 5 */
@@ -34046,6 +34047,25 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+window._ = __webpack_require__(6);
+
+// Button loading animation
+window.buttonLoad = function (link) {
+  document.getElementById("load").innerHTML = '<div class=\"mb-2\">Contacting People</div><div><i class=\"fas fa-question fa-3x fa-spin\"></i></div>';
+
+  setTimeout(function () {
+    window.location.href = link;
+  }, 3000);
+};
 
 /***/ })
 /******/ ]);
