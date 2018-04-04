@@ -45,11 +45,19 @@ class HomeController extends Controller
             $channelList[$key] = Youtube::listChannelVideos($channelId, $videoCount);
         }
 
+        // RSS feed URL's for blogs.
+        $blogs = config('dashboard.blogs');
+
+        foreach ($blogs as $key => $blog) {
+            $blogFeeds[$key] = Feeds::make($blog);
+        }
+
         return [
             'resources' => $resources,
             'docs' => $docs,
             'podcastFeeds' => $podcastFeeds,
             'channelList' => $channelList,
+            'blogFeeds' => $blogFeeds,
         ];
     }
 
@@ -65,8 +73,9 @@ class HomeController extends Controller
         $docs = $materials['docs'];
         $podcastFeeds = $materials['podcastFeeds'];
         $channelList = $materials['channelList'];
+        $blogFeeds = $materials['blogFeeds'];
 
-        return view('welcome', compact('resources', 'docs', 'podcastFeeds', 'channelList'));
+        return view('welcome', compact('resources', 'docs', 'podcastFeeds', 'channelList', 'blogFeeds'));
     }
 
     /**
@@ -81,6 +90,7 @@ class HomeController extends Controller
         $docs = $materials['docs'];
         $podcastFeeds = $materials['podcastFeeds'];
         $channelList = $materials['channelList'];
+        $blogFeeds = $materials['blogFeeds'];
 
         $links = [];
 
@@ -96,7 +106,7 @@ class HomeController extends Controller
 
         // Podcast links
         foreach ($podcastFeeds as $key => $feed) {
-            foreach (array_slice($feed->get_items(), 0, config('dashboard.item_count')) as $item) {
+            foreach (array_slice($feed->get_items(), 0, config('dashboard.podcast_item_count')) as $item) {
                 array_push($links, $item->get_permalink());
             }
         }
@@ -105,6 +115,13 @@ class HomeController extends Controller
         foreach ($channelList as $channelVideos) {
             foreach ($channelVideos as $video) {
                 array_push($links, '//www.youtube.com/embed/' . $video->id->videoId);
+            }
+        }
+
+        // Blog links
+        foreach ($blogFeeds as $key => $feed) {
+            foreach (array_slice($feed->get_items(), 0, config('dashboard.blog_item_count')) as $item) {
+                array_push($links, $item->get_permalink());
             }
         }
 

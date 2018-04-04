@@ -27,6 +27,16 @@ return [
             'link' => 'https://scrimba.com',
             'icon' => 'fab fa-css3-alt',
         ],
+        [
+            'title' => 'Reddit',
+            'link' => 'https://www.reddit.com/',
+            'icon' => 'fab fa-reddit-square',
+        ],
+        [
+            'title' => 'Medium',
+            'link' => 'https://medium.com/',
+            'icon' => 'fab fa-medium-m',
+        ],
     ],
 
     /*
@@ -44,6 +54,11 @@ return [
             'title' => 'Laravel',
             'link' => 'https://laravel.com/docs/5.6',
             'icon' => 'fab fa-laravel',
+        ],
+        [
+            'title' => 'Node',
+            'link' => 'https://nodejs.org/api/',
+            'icon' => 'fab fa-node-js'
         ],
         [
             'title' => 'React',
@@ -78,7 +93,7 @@ return [
     |
     */
 
-    'item_count' => 2,
+    'podcast_item_count' => 2,
 
     /*
     |--------------------------------------------------------------------------
@@ -106,4 +121,30 @@ return [
     */
 
     'video_count' => 1,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Blog RSS Feeds
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify RSS feeds for your favourite blogs. Feeds will be
+    | created from the given values.
+    |
+    */
+
+    'blogs' => [
+        'https://medium.com/feed/@akearns1010',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Blog Item Count
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify how many items are returned from each blog RSS
+    | feed.
+    |
+    */
+
+    'blog_item_count' => 2,
 ];

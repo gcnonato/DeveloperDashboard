@@ -66,12 +66,12 @@
                                             <hr />
 
                                             @foreach($podcastFeeds as $feed)
-                                                <div class="podcast">
-                                                    <div class="feed">
+                                                <div class="blog">
+                                                    <div class="blog-feed">
                                                         <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}" target="_blank">{{ $feed->get_title() }}</a></h2>
                                                     </div>
                                                         <div class="row">
-                                                            @foreach(array_slice($feed->get_items(), 0, config('dashboard.item_count')) as $item)
+                                                            @foreach(array_slice($feed->get_items(), 0, config('dashboard.podcast_item_count')) as $item)
                                                                 <div class="col-xs-12 col-md-6 col-lg-6">
                                                                     <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
                                                                     <p>{{ substr($item->get_description(), 0, 200) }}...</p>
@@ -112,6 +112,33 @@
                                             </div>
                                         @endforeach
                                         <hr />
+                                    </div>
+                                </div>
+
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div>
+                                            <h1 class="display-4">Blogs</h1>
+                                            <hr />
+
+                                            @foreach($blogFeeds as $feed)
+                                                <div class="podcast">
+                                                    <div class="feed">
+                                                        <h2 class="mb-3"><a href="{{ $feed->get_permalink() }}" target="_blank">{{ $feed->get_title() }}</a></h2>
+                                                    </div>
+                                                        <div class="row">
+                                                            @foreach(array_slice($feed->get_items(), 0, config('dashboard.podcast_item_count')) as $item)
+                                                                <div class="col-xs-12 col-md-6 col-lg-6">
+                                                                    <h4><a href="{{ $item->get_permalink() }}" target="_blank">{{ $item->get_title() }}</a></h4>
+                                                                    <p>{!! substr($item->get_description(), 0, 200) !!}...</p>
+                                                                    <p><small>Posted on {{ $item->get_date('j F Y | g:i a') }}</small></p>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                <hr />
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>

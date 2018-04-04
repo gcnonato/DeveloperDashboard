@@ -10069,3 +10069,31 @@ body {
   border: none;
 }
 
+.blog {
+  background-color: ghostwhite;
+  padding: 10px;
+}
+
+.blog-feed {
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */
+}
+
+.blog-feed a:link {
+  color: #212529;
+}
+
+.blog-feed a:visited {
+  color: #212529;
+}
+
+.blog-feed a:hover {
+  color: #212529;
+}
+
+.blog-feed a:active {
+  color: #212529;
+}
+
