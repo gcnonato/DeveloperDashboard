@@ -5,11 +5,36 @@ html {
 body {
 	font-family: 'Raleway', serif;
 	height: 100%;
+	background-color: #f5f5f5;
+}
+
+.container {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-color: #f5f5f5;
 }
 
 .jumbotron {
 	margin-bottom: 0px;
+}
+
+.scrollToTop {
+	position: fixed;
+	bottom: -4px;
+	right: 10px;
+	margin-bottom: 20px;
+	margin-right: 10px;
+	color: black;
+	z-index: 1;
+}
+
+.navbar {
+ 	height: 80px;
+
+	a {
+ 		font-size: 20px;
+ 	}
+
+ 	p {
+ 		font-size: 20px;
+ 	}
 }

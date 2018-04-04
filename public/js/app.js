@@ -30101,6 +30101,26 @@ module.exports = __webpack_require__(10);
 __webpack_require__(6);
 __webpack_require__(9);
 
+// Smoothly scroll links
+$('a[href^="#"]').on('click', function (event) {
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+});
+
+//Check to see if the window is top if not then display button
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+        $('.scrollToTop').fadeIn();
+    } else {
+        $('.scrollToTop').fadeOut();
+    }
+});
+
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
